@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Asmae ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px 40px 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .app-title {
+            font-size: 2.8em;
+            font-weight: 300;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #ffeaa7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #ffeaa7;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 25px 0;
+            opacity: 0;
+            animation: slideUp 1.2s ease forwards;
+            animation-delay: var(--delay);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-title {
+            font-size: 1.6em;
+            font-weight: 400;
+            color: #ffeaa7;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .card-text {
+            line-height: 2;
+            font-size: 1.1em;
+            color: #e8e8e8;
+            font-weight: 300;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(255, 154, 158, 0.2), rgba(254, 207, 239, 0.2));
+            border-left: 3px solid #ff9a9e;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 15px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .quote-box.st {
+            border-left-color: #a29bfe;
+            background: linear-gradient(135deg, rgba(162, 155, 254, 0.2), rgba(108, 92, 231, 0.2));
+        }
+
+        .quote-box.hp {
+            border-left-color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(184, 134, 11, 0.2));
+        }
+
+        .heart-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #ff9a9e;
+            font-size: 2.5em;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25%, 75% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .music-section {
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(162, 155, 254, 0.15));
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 25px 0;
+            border: 1px solid rgba(162, 155, 254, 0.3);
+        }
+
+        .music-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .final-message {
+            text-align: center;
+            padding: 50px 25px;
+            font-size: 1.25em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: #ffeaa7;
+            font-weight: 400;
+        }
+
+        .closing {
+            margin-top: 40px;
+            font-size: 1.8em;
+            color: #ff9a9e;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-size: 0.95em;
+            color: #ffeaa7;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 480px) {
+            .app-title { font-size: 2.2em; }
+            .card { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="stars" id="stars"></div>
+        
+        <div class="content">
+            <div class="header">
+                <div class="app-title">To Asmae</div>
+                <div class="subtitle">My Light in 2026</div>
+            </div>
+
+            <div class="card" style="--delay: 0.3s">
+                <div class="card-title">My Dearest Asmae,</div>
+                <div class="card-text">
+                    As we step into this new year, I want you to know something that comes from the deepest part of my heart...
+                    You are everything beautiful in this world, and I am so grateful that our paths crossed.
+                </div>
+            </div>
+
+            <div class="card" style="--delay: 0.6s">
+                <div class="card-title">You Are Safe Now</div>
+                <div class="card-text">
+                    I know the shadows of your childhood still whisper sometimes. I know there are memories that hurt, 
+                    scars that took time to heal. But I need you to know this: <span class="highlight">you are safe </span>.
+                    <br><br>
+                    Those dark days don't own you anymore. You survived them, you grew through them, and you became 
+                    this incredible person I get to hold close. Every tear you shed made you stronger, and I'm here now 
+                    to make sure you never have to face those storms alone again.
+                    
+                    <div class="quote-box st">
+                        "Friends don't lie." - Eleven, Stranger Things
+                        <br><br>
+                        And I promise you this truth: you are protected, you are cherished, and you are home.
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-container">
+                <div class="heart">💕</div>
+            </div>
+
+            <div class="card" style="--delay: 0.9s">
+                <div class="card-title">I Am So Proud of You</div>
+                <div class="card-text">
+                    Do you know how amazing you are? Do you see what I see when I look at you?
+                    <br><br>
+                    I see someone who faced darkness and chose light. Someone who could have let pain make her bitter, 
+                    but instead became gentle and kind. You took every broken piece of your past and built something 
+                    beautiful - <span class="highlight">you built yourself</span>.
+                    <br><br>
+                    I'm proud of your strength. I'm proud of your courage. I'm proud of the way you wake up every day 
+                    and choose hope. You inspire me more than you'll ever know.
+
+                    <div class="quote-box hp">
+                        "Happiness can be found, even in the darkest of times, if one only remembers to turn on the light." 
+                        - Albus Dumbledore
+                        <br><br>
+                        You are that light, Asmae. You shine so bright that you chase away every shadow.
+                    </div>
+                </div>
+            </div>
+
+            <div class="music-section card" style="--delay: 1.2s">
+                <div class="music-icon">🎵</div>
+                <div class="card-title">Our Song</div>
+                <div class="card-text">
+                    When I hear "Call Me By Your Name" by Sufjan Stevens, every note reminds me of you.
+                    The tenderness, the vulnerability, the pure emotion - that's us.
+                    <br><br>
+                    <span style="font-style: italic; color: #ffeaa7; font-size: 1.1em;">
+                        "For the love, the laughter I flew up to your arms"
+                    </span>
+                    <br><br>
+                    That's exactly how I feel with you. Safe. Free. Home.
+                </div>
+            </div>
+
+            <div class="card" style="--delay: 1.5s">
+                <div class="card-title">Beautiful Things Are Coming</div>
+                <div class="card-text">
+                    2026 is going to be <span class="highlight">our year</span>, Asmae. I can feel it in my bones.
+                    <br><br>
+                    This life has tested you enough. It's time for all the beautiful things you deserve to find their way to you. 
+                    New dreams, new joys, new adventures. And through all of it, I'll be right here beside you, 
+                    holding your hand, cheering you on.
+                    <br><br>
+                    You've spent enough time being afraid. This year, let's be fearless together.
+                </div>
+            </div>
+
+            <div class="card" style="--delay: 1.8s">
+                <div class="card-title">You Are Beautiful</div>
+                <div class="card-text">
+                    Not just on the outside - though you absolutely take my breath away.
+                    <br><br>
+                    You're beautiful in the way you care. Beautiful in your laugh. Beautiful in your strength and your softness. 
+                    Beautiful in every single way a person can be.
+                    <br><br>
+                    When I look at you, I see <span class="highlight">everything worth protecting in this world</span>.
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="final-message card" style="--delay: 2.1s">
+                <div class="card-text">
+                    Asmae, thank you for existing.
+                    <br>
+                    Thank you for being you.
+                    <br>
+                    Thank you for letting me love you.
+                    <br><br>
+                    The past can't hurt you anymore.
+                    <br>
+                    The future is ours to write.
+                    <br>
+                    And right now, in this moment, you are <span class="highlight">exactly where you're meant to be</span>.
+                    
+                    <div class="closing">
+                        Happy New Year 2026 💕
+                    </div>
+                    
+                    <div class="signature">
+                        Forever yours,
+                        <br>
+                        With all my love
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
